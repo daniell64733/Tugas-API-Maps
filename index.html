@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplikasi Peta dan Cuaca</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Aplikasi Peta dan Cuaca</h1>
+        <p class="subtitle">
+          Temukan lokasi dan informasi cuaca untuk kota mana pun di dunia
+        </p>
+      </header>
+
+      <div class="app-container">
+        <div class="search-section">
+          <div class="search-box">
+            <input
+              type="text"
+              id="cityInput"
+              placeholder="Masukkan nama kota..."
+            />
+            <button id="searchBtn">Cari</button>
+          </div>
+
+          <div class="loading" id="loadingIndicator">
+            <div class="spinner"></div>
+            <p>Mencari data...</p>
+          </div>
+
+          <div class="error-message" id="errorMessage">
+            <p>
+              Kota tidak ditemukan. Silakan coba lagi dengan nama kota yang
+              valid.
+            </p>
+          </div>
+
+          <div class="info-card" id="locationInfo">
+            <div class="location-info">
+              <h2 id="cityName">-</h2>
+              <div class="info-item">
+                <span class="info-label">Negara:</span>
+                <span class="info-value" id="country">-</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Populasi:</span>
+                <span class="info-value" id="population">-</span>
+              </div>
+              <div class="info-item">
+                <span class="info-label">Zona Waktu:</span>
+                <span class="info-value" id="timezone">-</span>
+              </div>
+
+              <div class="weather-info">
+                <div class="weather-icon" id="weatherIcon">☀️</div>
+                <div class="weather-details">
+                  <div class="temperature" id="temperature">-</div>
+                  <div class="weather-description" id="weatherDescription">
+                    -
+                  </div>
+                </div>
+              </div>
+
+              <div class="additional-info">
+                <div class="info-item">
+                  <span class="info-label">Kelembaban:</span>
+                  <span class="info-value" id="humidity">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Angin:</span>
+                  <span class="info-value" id="windSpeed">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Tekanan:</span>
+                  <span class="info-value" id="pressure">-</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Koordinat:</span>
+                  <span class="info-value" id="coordinates">-</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-section">
+          <div id="map"></div>
+        </div>
+      </div>
+
+      <footer>
+        <p>© 2023 Aplikasi Peta dan Cuaca | Data dari OpenWeatherMap</p>
+      </footer>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
